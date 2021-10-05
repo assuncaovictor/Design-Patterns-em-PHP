@@ -20,7 +20,7 @@ echo $calculadora->calcula($orcamento, new Icms);
 $calculadora = new CalculadoraDeDescontos();
 
 $orcamento = new Orcamento();
-$orcamento->valor = 500;
-$orcamento->quantidadeItens = 6;
+$orcamento->valor = 600;
+$orcamento->quantidadeItens = 2;
 
 echo $calculadora->calculaDescontos($orcamento);

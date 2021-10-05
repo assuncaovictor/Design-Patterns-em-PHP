@@ -12,6 +12,6 @@ class DescontoMaisDe500Reais extends Desconto
             return $orcamento->valor * 0.05;
         }
 
-        return $this->proximoDesconto->calculaDesconto($orcamento);
+        return parent::calculaDesconto($orcamento);
     }
 }
