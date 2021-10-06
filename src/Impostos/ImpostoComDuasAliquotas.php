@@ -6,7 +6,7 @@ use Assuncaovictor\DesignPattern\Orcamento;
 
 abstract class ImpostoComDuasAliquotas  implements Imposto
 {
-    public function calculaImposto(Orcamento $orcamento): float
+    final public function calculaImposto(Orcamento $orcamento): float
     {
         if ($this->deveAplicarTaxaMaxima($orcamento)) {
             return $this->calculaTaxaMaxima($orcamento);
