@@ -4,14 +4,15 @@ namespace Assuncaovictor\DesignPattern\Descontos;
 
 use Assuncaovictor\DesignPattern\Orcamento;
 
-class DescontoMaisDe5Itens extends Desconto
+final class DescontoMaisDe5Itens extends VerificaDesconto
 {
-    public function calculaDesconto(Orcamento $orcamento): float
+    protected function conficaoDoDesconto(Orcamento $orcamento): bool
     {
-        if ($orcamento->quantidadeItens > 5) {
-            return $orcamento->valor * 0.1;
-        }
+        return $orcamento->quantidadeItens > 5;
+    }
 
-        return parent::calculaDesconto($orcamento);
+    protected function valorDesconto(Orcamento $orcamento): float
+    {
+        return $orcamento->valor * 0.1;
     }
 }
