@@ -2,8 +2,28 @@
 
 namespace Assuncaovictor\DesignPattern;
 
+use Assuncaovictor\DesignPattern\AcoesAoGerarPedido\AcaoAposGerarPedido;
+use Assuncaovictor\DesignPattern\AcoesAoGerarPedido\CriarPedidoNoBanco;
+use Assuncaovictor\DesignPattern\AcoesAoGerarPedido\EnviarPedidoPorEmail;
+use Assuncaovictor\DesignPattern\AcoesAoGerarPedido\GerarLog;
+
+/**
+ * Aplica o padrão command e sua implementação na web, o command handler
+ */
 class GerarPedidoHandler implements Comando
 {
+    /** @var AcaoAposGerarPedido[] */
+    private array $acoesAposGerarPedido = [];
+
+    public function __construct(/* PedidoRepositorym MailService */)
+    {
+    }
+
+    public function adicionaAcaoAoGerarPedido(AcaoAposGerarPedido $acao)
+    {
+        $this->acoesAposGerarPedido[] = $acao;
+    }
+
     public function execute(GerarPedido $gerarPedido): void
     {
         $orcamento = new Orcamento();
@@ -15,7 +35,8 @@ class GerarPedidoHandler implements Comando
         $pedido->nomeCliente = $gerarPedido->getNomeCliente();
         $pedido->orcamento = $orcamento;
 
-        echo "Cria pedido no banco de dados" . PHP_EOL;
-        echo "Envia e-mail para cliente" . PHP_EOL;
+        foreach ($this->acoesAposGerarPedido as $acao) {
+            $acao->executaAcao($pedido);
+        }
     }
 }
