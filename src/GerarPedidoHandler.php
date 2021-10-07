@@ -12,10 +12,13 @@ use Assuncaovictor\DesignPattern\AcoesAoGerarPedido\GerarLog;
  */
 class GerarPedidoHandler implements Comando
 {
-    /** @var AcaoAposGerarPedido[] */
+    /** 
+     * Implemetação do padrão observer junto ao padrão command handle
+     * @var AcaoAposGerarPedido[] 
+     * */
     private array $acoesAposGerarPedido = [];
 
-    public function __construct(/* PedidoRepositorym MailService */)
+    public function __construct(/* PedidoRepository, MailService */)
     {
     }
 
