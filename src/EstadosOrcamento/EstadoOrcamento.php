@@ -4,6 +4,9 @@ namespace Assuncaovictor\DesignPattern\EstadosOrcamento;
 
 use Assuncaovictor\DesignPattern\Orcamento;
 
+/**
+ * Aplicação do padrçao State, viola o princípio de substituição de Liskov
+ */
 abstract class EstadoOrcamento
 {
     final public function calculaDescontoExtra(Orcamento $orcamento): float

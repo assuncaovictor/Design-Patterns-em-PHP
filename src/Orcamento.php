@@ -17,6 +17,9 @@ class Orcamento
         $this->estadoAtual = new EmAprovacao();
     }
 
+    /**
+     * @throws \DomainExceptions 
+     */
     public function AplicaDescontoExtra(): void
     {
         $this->valor -= $this->estadoAtual->calculaDescontoExtra($this);
