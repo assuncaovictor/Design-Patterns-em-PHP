@@ -4,17 +4,16 @@ namespace Assuncaovictor\DesignPattern;
 
 use Assuncaovictor\DesignPattern\EstadosOrcamento\EmAprovacao;
 use Assuncaovictor\DesignPattern\EstadosOrcamento\EstadoOrcamento;
-use DomainException;
 
-class Orcamento
+class Orcamento implements Orcavel
 {
-    public int $quantidadeItens;
-    public float $valor;
+    private array $itens;
     public EstadoOrcamento $estadoAtual;
 
     public function __construct()
     {
         $this->estadoAtual = new EmAprovacao();
+        $this->itens = [];
     }
 
     /**
@@ -38,5 +37,22 @@ class Orcamento
     public function finaliza(): void
     {
         $this->estadoAtual->finaliza($this);
+    }
+
+    public function adicionaItem(Orcavel $item)
+    {
+        $this->itens[] = $item;
+    }
+
+    public function valor(): float
+    {
+        return array_reduce(
+            $this->itens,
+            fn (float $valorAcumulado, Orcavel $item) => $item->valor() + $valorAcumulado,
+            //function (float $valorAcumulado, ItemOrcamento $item) {
+            //    return $item->valor + $valorAcumulado;
+            //},
+            0
+        );
     }
 }
