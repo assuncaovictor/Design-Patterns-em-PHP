@@ -1,5 +1,6 @@
 <?php
 
+use Assuncaovictor\DesignPattern\CacheOrcamentoProxy;
 use Assuncaovictor\DesignPattern\ItemOrcamento;
 use Assuncaovictor\DesignPattern\Orcamento;
 
@@ -29,4 +30,16 @@ $orcamentoAntigo->adicionaItem($OrcamentoMuitoAntigo);
 
 $orcamento->adicionaItem($orcamentoAntigo);
 
-echo $orcamento->valor();
+$proxyCache = new CacheOrcamentoProxy($orcamento);
+echo $proxyCache->valor() . PHP_EOL;
+echo $proxyCache->valor() . PHP_EOL;
+echo $proxyCache->valor() . PHP_EOL;
+echo $proxyCache->valor() . PHP_EOL;
+echo $proxyCache->valor() . PHP_EOL;
+echo $proxyCache->valor() . PHP_EOL;
+echo $proxyCache->valor() . PHP_EOL;
+echo $proxyCache->valor() . PHP_EOL;
+echo $proxyCache->valor() . PHP_EOL;
+echo $proxyCache->valor() . PHP_EOL;
+echo $proxyCache->valor() . PHP_EOL;
+echo $proxyCache->valor() . PHP_EOL;
