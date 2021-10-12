@@ -7,3 +7,4 @@
 [12/10/2021][info]: Testando log manager
 [12/10/2021][info]: Testando log manager
 [12/10/2021][info]: Testando log manager
+[12/10/2021][info]: Testando log manager
