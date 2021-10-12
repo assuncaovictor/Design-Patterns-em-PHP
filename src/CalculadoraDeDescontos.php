@@ -16,8 +16,12 @@ class CalculadoraDeDescontos
     public function calculaDescontos(Orcamento $orcamento): float
     {
         $desconto = new DescontoMaisDe5Itens();
-        $desconto->setProximo(new DescontoMaisDe500Reais)->setProximo(new SemDesconto);
+        $desconto->setProximo(new DescontoMaisDe500Reais)
+            ->setProximo(new SemDesconto);
+        $descontoCalculado = $desconto->calculaDesconto($orcamento);
+        $logDesconto = new LogDesconto();
+        $logDesconto->informar($descontoCalculado);
 
-        return $desconto->calculaDesconto($orcamento);
+        return $descontoCalculado;
     }
 }
