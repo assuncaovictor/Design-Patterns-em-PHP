@@ -1,8 +1,8 @@
 <?php
 
-namespace Assuncaovictor\DesignPattern;
+namespace Assuncaovictor\DesignPattern\Pedido;
 
-class DadosExtrinsecosPedido
+class TemplatePedido
 {
     private string $nomeCliente;
     private \DateTimeInterface $dataFinalizacao;

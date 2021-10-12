@@ -2,7 +2,7 @@
 
 namespace Assuncaovictor\DesignPattern\Relatorios;
 
-use Assuncaovictor\DesignPattern\Pedido;
+use Assuncaovictor\DesignPattern\Pedido\Pedido;
 
 class PedidoExportado implements ConteudoExportado
 {

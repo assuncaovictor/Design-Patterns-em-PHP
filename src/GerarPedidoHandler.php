@@ -3,9 +3,7 @@
 namespace Assuncaovictor\DesignPattern;
 
 use Assuncaovictor\DesignPattern\AcoesAoGerarPedido\AcaoAposGerarPedido;
-use Assuncaovictor\DesignPattern\AcoesAoGerarPedido\CriarPedidoNoBanco;
-use Assuncaovictor\DesignPattern\AcoesAoGerarPedido\EnviarPedidoPorEmail;
-use Assuncaovictor\DesignPattern\AcoesAoGerarPedido\GerarLog;
+use Assuncaovictor\DesignPattern\Pedido\Pedido;
 
 /**
  * Aplica o padrão command e sua implementação na web, o command handler

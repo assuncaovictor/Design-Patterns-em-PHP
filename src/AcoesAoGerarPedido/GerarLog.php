@@ -2,7 +2,7 @@
 
 namespace Assuncaovictor\DesignPattern\AcoesAoGerarPedido;
 
-use Assuncaovictor\DesignPattern\Pedido;
+use Assuncaovictor\DesignPattern\Pedido\Pedido;
 
 class GerarLog implements AcaoAposGerarPedido
 {
