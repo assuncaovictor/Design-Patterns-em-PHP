@@ -4,9 +4,9 @@ namespace Assuncaovictor\DesignPattern\Impostos;
 
 use Assuncaovictor\DesignPattern\Orcamento;
 
-class Iss implements Imposto
+class Iss extends Imposto
 {
-    public function calculaImposto(Orcamento $orcamento): float
+    public function realizaCalculoEspecifico(Orcamento $orcamento): float
     {
         return $orcamento->valor * 0.06;
     }

@@ -8,6 +8,6 @@ class CalculadoraDeImpostos
 {
     public function calculaDesconto(Orcamento $orcamento, Imposto $nomeImposto): float
     {
-        return $nomeImposto->calculaImposto($orcamento);
+        return $nomeImposto->calculaImporsto($orcamento);
     }
 }

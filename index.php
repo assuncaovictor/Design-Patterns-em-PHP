@@ -14,13 +14,13 @@ $calculadora = new CalculadoraDeImpostos();
 $orcamento = new Orcamento();
 $orcamento->valor = 500;
 
-echo $calculadora->calculaDesconto($orcamento, new Icpp()) . PHP_EOL . PHP_EOL;
+echo $calculadora->calculaDesconto($orcamento, new Icpp(new Icms()));
 
 //criado: v0.1.1 | alterado: v0.1.1.1, v0.1.2
-$calculadora = new CalculadoraDeDescontos();
+/*$calculadora = new CalculadoraDeDescontos();
 
 $orcamento = new Orcamento();
 $orcamento->valor = 600;
 $orcamento->quantidadeItens = 7;
 
-echo $calculadora->calculaDescontos($orcamento) . PHP_EOL . PHP_EOL;
+echo $calculadora->calculaDescontos($orcamento);*/
