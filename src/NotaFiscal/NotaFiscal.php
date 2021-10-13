@@ -15,10 +15,7 @@ class NotaFiscal
 
     public function valorSemJuros(): float
     {
-        $valor = 0;
-        foreach ($this->itens as $item) {
-            $valor += $item->valor();
-        }
+
         return array_reduce(
             $this->itens,
             fn (float $valorAcumulado, ItemOrcamento $itemAtual) => $valorAcumulado + $itemAtual->valor(),
@@ -30,5 +27,10 @@ class NotaFiscal
     {
         $valorSemJuros = $this->valorSemJuros();
         return $valorSemJuros + $this->valorImpostos;
+    }
+
+    public function __clone()
+    {
+        $this->dataEmissao = new \DateTimeImmutable();
     }
 }
