@@ -19,7 +19,7 @@ abstract class Imposto
 
     abstract protected function realizaCalculoEspecifico(Orcamento $orcamento): float;
 
-    public function calculaImporsto(Orcamento $orcamento)
+    public function calculaImposto(Orcamento $orcamento)
     {
         return $this->realizaCalculoEspecifico($orcamento) +
             $this->realizaCalculoDeOutroImposto($orcamento);
@@ -27,6 +27,6 @@ abstract class Imposto
 
     protected function realizaCalculoDeOutroImposto(Orcamento $orcamento): float
     {
-        return is_null($this->outroImposto) ? 0 : $this->outroImposto->calculaImporsto($orcamento);
+        return is_null($this->outroImposto) ? 0 : $this->outroImposto->calculaImposto($orcamento);
     }
 }
